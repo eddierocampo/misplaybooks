@@ -1,0 +1,15 @@
+---
+- name: Managment KVM
+  hosts: all
+  gather_facts: true
+  vars:
+    vm_name:
+      - aapcont
+      - devcontentb
+      - ocpson
+  tasks:
+    - name: Iniciar ambiente
+      community.libvirt.virt:
+        name: "{{ item }}"
+        state: running
+      loop: "{{ vm_name }}"
