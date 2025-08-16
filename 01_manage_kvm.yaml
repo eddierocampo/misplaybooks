@@ -5,7 +5,7 @@
   become: true
 
   tasks:
-    - name: Iniciar ambiente
+    - name: "Environment {{ action }}"
       community.libvirt.virt:
         name: "{{ item }}"
         state: "{{ action }}"
