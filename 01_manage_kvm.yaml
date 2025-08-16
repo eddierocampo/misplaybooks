@@ -2,6 +2,7 @@
 - name: Managment KVM
   hosts: all
   gather_facts: true
+  become: true
   vars:
     vm_name:
       - aapcont
