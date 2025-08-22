@@ -14,4 +14,4 @@
 
     - name: Beelink Shutdodwn
       community.general.shutdown:
-      when: vm_name == "SI"
+      when: beelink == "SI"
