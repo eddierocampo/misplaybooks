@@ -10,7 +10,9 @@
         name: "{{ item }}"
         state: "{{ action }}"
       loop: "{{ vm_name }}"
-      when: vm_name is defined
+      when:
+        - vm_name is defined
+        - action is defined
 
     - name: Beelink Shutdodwn
       community.general.shutdown:
